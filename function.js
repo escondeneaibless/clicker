@@ -24,16 +24,16 @@ let floatIdCounter = 0;
 
 // Upgrade levels and base costs
 let clickLevel1 = 0; let baseCost1 = 10;
-let clickLevel10 = 0; let baseCost10 = 100;
-let clickLevel30 = 0; let baseCost30 = 300;
-let clickLevel50 = 0; let baseCost50 = 500;
-
-let speedLevel1 = 0; let baseSpeedCost1 = 150;
-let speedLevel2 = 0; let baseSpeedCost2 = 300;
+let clickLevel10 = 0; let baseCost10 = 125;
+let clickLevel30 = 0; let baseCost30 = 910;
+let clickLevel50 = 0; let baseCost50 = 30000;
+    
+let speedLevel1 = 0; let baseSpeedCost1 = 10;
+let speedLevel2 = 0; let baseSpeedCost2 = 150;
 let speedLevel3 = 0; let baseSpeedCost3 = 1000;
-let speedLevel4 = 0; let baseSpeedCost4 = 10000;
+let speedLevel4 = 0; let baseSpeedCost4 = 30000;
 
-const GROWTH = 2.0;
+const GROWTH = 1.8;
 
 function updateButtonText(btn, baseCost, level) {
     let cost = Math.floor(baseCost * Math.pow(GROWTH, level));
@@ -111,7 +111,7 @@ upgrade1.addEventListener('click', () => {
 upgrade10.addEventListener('click', () => {
     let cost = Math.floor(baseCost10 * Math.pow(GROWTH, clickLevel10));
     if (pointsNum >= cost) {
-        ch += 10;
+        ch += 11;
         clickBtn.innerHTML = "Клик " + ch;
         pointsNum -= cost;
         points.value = "Points " + pointsNum;
@@ -126,7 +126,7 @@ upgrade10.addEventListener('click', () => {
 upgrade30.addEventListener('click', () => {
     let cost = Math.floor(baseCost30 * Math.pow(GROWTH, clickLevel30));
     if (pointsNum >= cost) {
-        ch += 30;
+        ch += 24;
         clickBtn.innerHTML = "Клик " + ch;
         pointsNum -= cost;
         points.value = "Points " + pointsNum;
@@ -141,7 +141,7 @@ upgrade30.addEventListener('click', () => {
 upgrade50.addEventListener('click', () => {
     let cost = Math.floor(baseCost50 * Math.pow(GROWTH, clickLevel50));
     if (pointsNum >= cost) {
-        ch += 50;
+        ch += 500;
         clickBtn.innerHTML = "Клик " + ch;
         pointsNum -= cost;
         points.value = "Points " + pointsNum;
@@ -171,7 +171,7 @@ upgradeS1.addEventListener('click', () => {
 upgradeS2.addEventListener('click', () => {
     let cost = Math.floor(baseSpeedCost2 * Math.pow(GROWTH, speedLevel2));
     if (pointsNum >= cost) {
-        speedNum += 5;
+        speedNum += 10;
         speedEl.innerHTML = "Скорость в сек. - " + speedNum;
         pointsNum -= cost;
         points.value = "Points " + pointsNum;
@@ -186,7 +186,7 @@ upgradeS2.addEventListener('click', () => {
 upgradeS3.addEventListener('click', () => {
     let cost = Math.floor(baseSpeedCost3 * Math.pow(GROWTH, speedLevel3));
     if (pointsNum >= cost) {
-        speedNum += 10;
+        speedNum += 30;
         speedEl.innerHTML = "Скорость в сек. - " + speedNum;
         pointsNum -= cost;
         points.value = "Points " + pointsNum;
@@ -201,7 +201,7 @@ upgradeS3.addEventListener('click', () => {
 upgradeS4.addEventListener('click', () => {
     let cost = Math.floor(baseSpeedCost4 * Math.pow(GROWTH, speedLevel4));
     if (pointsNum >= cost) {
-        speedNum += 50;
+        speedNum += 500;
         speedEl.innerHTML = "Скорость в сек. - " + speedNum;
         pointsNum -= cost;
         points.value = "Points " + pointsNum;
