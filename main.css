@@ -14,8 +14,8 @@ body {
     min-height: 100vh;
     gap: 20px;
     font-family: 'Arial', sans-serif;
-    margin-top: 50px;
     margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .points-container {
